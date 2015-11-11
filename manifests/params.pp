@@ -31,6 +31,7 @@ class exim::params {
   $heavy                              = false
   $includes                           = []
   $local_from_check                   = true
+  $local_sender_retain                = false
   $log_smtp_confirmation              = true
   $log_smtp_connection                = true
   $log_smtp_protocol_error            = true

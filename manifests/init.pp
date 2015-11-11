@@ -136,6 +136,9 @@
 # [*local_interfaces*]
 #   Specifies the interfaces exim will listen on.
 #
+# [*local_sender_retain*]
+#   Preserve Sender: header from untrusted local users.
+#
 # [*log_file_path*']
 #   Type: string
 #
@@ -302,6 +305,7 @@ class exim (
   $includes                           =$::exim::params::includes,
   $local_from_check                   =$::exim::params::local_from_check,
   $local_interfaces                   =$::exim::params::local_interfaces,
+  $local_sender_retain                =$::exim::params::local_sender_retain,
   $log_file_path                      =$::exim::params::log_file_path,
   $log_lost_incoming_connection       =$::exim::params::log_lost_incoming_connection,
   $log_retry_defer                    =$::exim::params::log_retry_defer,

@@ -14,6 +14,8 @@
 <% @includes.each do |i| -%>
 .include <%= i %>
 <% end -%>
+<% if     @local_sender_retain       -%>local_sender_retain        = true
+<% end -%>
 <% unless @local_from_check          -%>local_from_check           = false
 <% end -%>
 <% unless @local_interfaces.nil?     -%>local_interfaces           = <; <%= @local_interfaces.join(" ; ") %>
