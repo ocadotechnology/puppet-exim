@@ -10,6 +10,9 @@
 <% unless @server_prompts.nil? -%>
   server_prompts   = <%= @server_prompts %>
 <% end -%>
+<% unless @server_secret.nil? -%>
+  server_secret    = <%= @server_secret %>
+<% end -%>
 <% unless @client_name.nil? -%>
   client_name      = <%= @client_name %>
 <% end -%>

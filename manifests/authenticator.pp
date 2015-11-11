@@ -13,6 +13,9 @@
 # [*server_condition*]
 #  The authentication check
 #
+# [*server_secret*]
+#  The server secret
+#
 # [*server_set_id*]
 #  Set the $authenticated_id variable for later use
 #
@@ -35,6 +38,7 @@ define exim::authenticator (
   $server_condition = undef,
   $server_set_id    = undef,
   $server_prompts   = undef,
+  $server_secret    = undef,
   $client_name      = undef,
   $client_secret    = undef,
   ){
