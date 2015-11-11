@@ -1,9 +1,19 @@
 <%= @title %>:
   driver           = <%= @driver %>
   public_name      = <%= @public_name %>
+<% unless @server_condition.nil? -%>
   server_condition = <%= @server_condition %>
+<% end -%>
+<% unless @server_set_id.nil? -%>
   server_set_id    = <%= @server_set_id %>
+<% end -%>
 <% unless @server_prompts.nil? -%>
   server_prompts   = <%= @server_prompts %>
+<% end -%>
+<% unless @client_name.nil? -%>
+  client_name      = <%= @client_name %>
+<% end -%>
+<% unless @client_secret.nil? -%>
+  client_secret    = <%= @client_secret %>
 <% end -%>
 

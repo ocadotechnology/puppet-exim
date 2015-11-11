@@ -19,13 +19,24 @@
 # [*server_prompts*]
 #  Promt used in the smtp session to ask for data  (User: Password:)
 #
+# [*client_name*]
+#  This string is expanded, and the result used as the user name data when
+#   computing the response to the server's challenge
+#
+# [*client_secret*]
+#  This option must be set for the authenticator to work as a client; its
+#  value is expanded and the result used as the secret string when computing
+#  the response
+#
 
 define exim::authenticator (
   $driver,
   $public_name,
-  $server_condition,
-  $server_set_id,
-  $server_prompts = undef,
+  $server_condition = undef,
+  $server_set_id    = undef,
+  $server_prompts   = undef,
+  $client_name      = undef,
+  $client_secret    = undef,
   ){
   concat::fragment { "authenticator-${title}":
     target  => $::exim::config_path,
