@@ -12,7 +12,12 @@
 <%     if value.nil? -%>
 <%=     "  %-7s %s\n" % [printacl,option] -%>
 <%     else -%>
-<%=     "  %-7s %-13s = %s\n" % [printacl,option,value.join(" : ")] %><% printacl="" -%>
+<%      if value.map { |v| v.include?(":") }.any? -%>
+<%       joined_value = "<; " + value.join(" ; ") -%>
+<%      else -%>
+<%       joined_value = value.join(" : ") -%>
+<%      end -%>
+<%=     "  %-7s %-13s = %s\n" % [printacl,option,joined_value] %><% printacl="" -%>
 <%     end -%>
 <%    end -%>
 <%   end -%>
