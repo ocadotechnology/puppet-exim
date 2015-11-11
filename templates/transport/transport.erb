@@ -102,4 +102,7 @@ end
 <% if @allow_localhost -%>
   allow_localhost
 <% end -%>
+<% if validate_string(@hosts_try_auth) -%>
+  hosts_try_auth  = <%= @hosts_try_auth %>
+<% end -%>
 

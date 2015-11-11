@@ -27,6 +27,12 @@
 #   is deemed to have failed whatever the return code from the command, and
 #   the output is returned in the bounce message
 #
+# [*hosts_try_auth*]
+#   This option provides a list of servers to which, provided they announce
+#   authentication support, Exim will attempt to authenticate as a client when
+#   it connects. If authentication fails, Exim will try to transfer the message
+#   unauthenticated.
+#
 define exim::transport (
   $driver,
   $allow_localhost      = false,
@@ -60,6 +66,7 @@ define exim::transport (
   $transport_filter     = undef,
   $user                 = undef,
   $rcpt_include_affixes = false,
+  $hosts_try_auth       = undef,
   ){
   if ($directory)        { validate_re($directory       ,'^.+$') }
   if ($command)          { validate_re($command         ,'^.+$') }
