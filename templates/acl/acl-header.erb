@@ -23,5 +23,8 @@ acl_smtp_data    = <%= @acl_smtp_data %>
 <% unless @acl_smtp_mime.nil? -%>
 acl_smtp_mime    = <%= @acl_smtp_mime %>
 <% end -%>
+<% unless @acl_smtp_helo.nil? -%>
+acl_smtp_helo    = <%= @acl_smtp_helo %>
+<% end -%>
 
 begin acl

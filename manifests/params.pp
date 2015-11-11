@@ -24,6 +24,7 @@ class exim::params {
   $acl_smtp_auth                      = undef
   $acl_smtp_data                      = undef
   $acl_smtp_rcpt                      = 'acl_check_rcpt'
+  $acl_smtp_helo                      = undef
   $defaults                           = true
   $daemon_smtp_ports                  = undef
   $freeze_tell                        = undef

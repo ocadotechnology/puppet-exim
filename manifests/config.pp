@@ -11,6 +11,7 @@ class exim::config {
   $acl_smtp_rcpt = $::exim::acl_smtp_rcpt
   $acl_smtp_data = $::exim::acl_smtp_data
   $acl_smtp_mime = $::exim::acl_smtp_mime
+  $acl_smtp_helo = $::exim::acl_smtp_helo
 
   concat { $::exim::config_path:
   }

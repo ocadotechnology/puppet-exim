@@ -27,6 +27,11 @@
 #     (runs after SMTP "RCPT TO:" command)
 #   Type: string
 #
+# [*acl_smtp_helo*]
+#   Name of acl used for helo checking.
+#     (runs after SMTP "HELO" command)
+#   Type: string
+#
 # [*allow_mx_to_ip*]
 #   Using an ip instead of an fqdn in DNS MX records violates the RFC,
 #   this option allows sending mails to these domains anyways.
@@ -275,6 +280,7 @@ class exim (
   $acl_smtp_mail                      =$::exim::params::acl_smtp_mail,
   $acl_smtp_mime                      =$::exim::params::acl_smtp_mime,
   $acl_smtp_rcpt                      =$::exim::params::acl_smtp_rcpt,
+  $acl_smtp_helo                      =$::exim::params::acl_smtp_helo,
   $allow_mx_to_ip                     =$::exim::params::allow_mx_to_ip,
   $auto_thaw                          =$::exim::params::auto_thaw,
   $av_scanner                         =$::exim::params::av_scanner,
