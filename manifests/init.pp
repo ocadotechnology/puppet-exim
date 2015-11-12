@@ -273,6 +273,9 @@
 #   Set, to configure exims global config variable trusted_users,
 #   default is empty ('').
 #
+# [*received_header_text*]
+#   Text of the Received: header, include the "Received:" at the beginning
+#
 # === Examples
 #  class { 'noris_exim':
 #  }
@@ -345,6 +348,7 @@ class exim (
   $tls_privatekey                     =$::exim::params::tls_privatekey,
   $trusted_users                      =$::exim::params::trusted_users,
   $extract_addresses_remove_arguments =$::exim::params::extract_addresses_remove_arguments,
+  $received_header_text               =$::exim::params::received_headers_text,
 ) inherits exim::params {
 
   include exim::install

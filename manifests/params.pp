@@ -86,4 +86,17 @@ class exim::params {
   $callout_domain_positive_expire     = undef
   $hosts_treat_as_local               = undef
   $extract_addresses_remove_arguments = undef
+  $received_header_text               = "Received: \\
+  \${if def:sender_rcvhost {from \$sender_rcvhost\\n\\t}\\
+  {\${if def:sender_ident \\
+  {from \${quote_local_part:\$sender_ident} }}\\
+  \${if def:sender_helo_name {(helo=\$sender_helo_name)\\n\\t}}}}\\
+  by \$primary_hostname \\
+  \${if def:received_protocol {with \$received_protocol}} \\
+  \${if def:tls_cipher {(\$tls_cipher)\\n\\t}}\\
+  (Exim)\\n\\t\\
+  \${if def:sender_address \\
+  {(envelope-from <\$sender_address>)\\n\\t}}\\
+  id $message_exim_id\\
+  \${if def:received_for {\\n\\tfor \$received_for}}"
 }
