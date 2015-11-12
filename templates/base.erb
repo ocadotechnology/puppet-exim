@@ -34,7 +34,12 @@ log_selector               =  <% if @log_smtp_confirmation        == false %>-<%
                               <% if @log_lost_incoming_connection == false %>-<% else %>+<% end %>lost_incoming_connection \
                               <% if @log_tls_peerdn               == false %>-<% else %>+<% end %>tls_peerdn \
                               <% if @log_skip_delivery            == false %>-<% else %>+<% end %>skip_delivery \
-                              <% if @log_retry_defer              == false %>-<% else %>+<% end %>retry_defer
+                              <% if @log_retry_defer              == false %>-<% else %>+<% end %>retry_defer \
+                              <% if @log_queue_run                == false %>-<% else %>+<% end %>queue_run \
+                              <% if @log_received_recipients      == false %>-<% else %>+<% end %>received_recipients \
+                              <% if @log_received_sender          == false %>-<% else %>+<% end %>received_sender \
+                              <% if @log_subject                  == false %>-<% else %>+<% end %>received_subject \
+                              <% if @log_return_path_on_delivery  == false %>-<% else %>+<% end %>return_path_on_delivery
 
 <% unless @freeze_tell.nil?                -%>freeze_tell                = <%= @freeze_tell %>
 <% end -%>

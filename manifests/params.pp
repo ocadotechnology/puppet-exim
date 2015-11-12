@@ -41,6 +41,11 @@ class exim::params {
   $log_tls_peerdn                     = true
   $log_skip_delivery                  = true
   $log_retry_defer                    = true
+  $log_queue_run                      = true
+  $log_received_recipients            = false
+  $log_received_sender                = false
+  $log_subject                        = false
+  $log_return_path_on_delivery        = false
   $local_interfaces                   = undef
   $macros                             = {}
   $message_logs                       = true
