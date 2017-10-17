@@ -353,7 +353,7 @@ class exim (
   $tls_privatekey                     =$::exim::params::tls_privatekey,
   $trusted_users                      =$::exim::params::trusted_users,
   $extract_addresses_remove_arguments =$::exim::params::extract_addresses_remove_arguments,
-  $received_header_text               =$::exim::params::received_headers_text,
+  $received_header_text               =$::exim::params::received_header_text,
 ) inherits exim::params {
 
   include exim::install
