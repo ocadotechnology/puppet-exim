@@ -328,6 +328,7 @@ class exim (
   $message_logs                       =$::exim::params::message_logs,
   $message_size_limit                 =$::exim::params::message_size_limit,
   $never_users                        =$::exim::params::never_users,
+  $pkg_ensure                         =$::exim::params::pkg_ensure,
   $qualify_domain                     =$::exim::params::qualify_domain,
   $queue_only_load                    =$::exim::params::queue_only_load,
   $queue_run_max                      =$::exim::params::queue_run_max,

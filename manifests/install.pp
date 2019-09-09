@@ -4,12 +4,12 @@
 #
 class exim::install {
   if ($::exim::heavy) {
-    $exim_package = $::exim::params::exim_heavy_package
+    $exim_packages = $::exim::params::exim_heavy_package
   }
   else {
-    $exim_package = $::exim::params::exim_light_package
+    $exim_packages = $::exim::params::exim_light_packages
   }
-  package { $exim_package:
-    ensure => installed,
+  package { $exim_packages:
+    ensure => $::exim::pkg_ensure,
   }
 }
