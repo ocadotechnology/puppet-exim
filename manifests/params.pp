@@ -5,13 +5,20 @@
 class exim::params {
   case $::osfamily {
     'debian': {
-      $exim_light_package = 'exim4'
+      $exim_light_packages = [
+                              'exim4',
+                              'exim4-base',
+                              'exim4-config',
+                              'exim4-daemon-light',
+                             ]
       $exim_heavy_package = 'exim4-daemon-heavy'
       $exim_service = 'exim4'
       $config_path = '/etc/exim4/exim4.conf'
     }
     'redhat': {
-      $exim_light_package = 'exim'
+      $exim_light_packages = [
+                              'exim',
+                             ]
       $exim_heavy_package = 'exim'
       $exim_service = 'exim'
       $config_path = '/etc/exim/exim.conf'
@@ -29,6 +36,7 @@ class exim::params {
   $daemon_smtp_ports                  = undef
   $freeze_tell                        = undef
   $heavy                              = false
+  $pkg_ensure                         = 'installed'
   $includes                           = []
   $local_from_check                   = true
   $local_sender_retain                = false
